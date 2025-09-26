@@ -216,16 +216,16 @@ export default function SignupBabyPage() {
   return (
     <>
       <Toaster richColors />
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 p-4">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 dark:from-gray-800 dark:via-gray-900 dark:to-black p-4">
         <div className="w-full max-w-2xl animate-fade-in">
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:scale-[1.01]"
+            className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:scale-[1.01]"
           >
             {/* Header */}
             <div className="text-center mb-8">
               <div className="flex justify-center mb-4">
-                <div className="p-3 bg-pink-100 rounded-full hover:bg-pink-200 transition-all duration-300 hover:scale-110 hover:rotate-3">
+                <div className="p-3 bg-pink-100 dark:bg-pink-900/50 rounded-full hover:bg-pink-200 dark:hover:bg-pink-800/60 transition-all duration-300 hover:scale-110 hover:rotate-3">
                   {/* NeoNest Logo */}
                   <svg
                     className="w-12 h-12 hover:scale-110 transition-transform duration-300"
@@ -328,40 +328,40 @@ export default function SignupBabyPage() {
               <h1 className="text-3xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent mb-2 hover:from-pink-700 hover:to-purple-700 transition-all duration-300">
                 Baby Details
               </h1>
-              <p className="text-gray-600 text-sm hover:text-gray-700 transition-colors duration-300">
+              <p className="text-gray-600 dark:text-gray-400 text-sm hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-300">
                 Tell us about your little one(s) to personalize your experience
               </p>
             </div>
 
             {/* General Info Section */}
-            <div className="bg-gray-50 rounded-xl p-6 mb-8 hover:bg-gray-100 transition-all duration-300 hover:scale-[1.02] group">
-              <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center group-hover:text-gray-900 transition-colors duration-300">
-                <Users className="w-5 h-5 mr-2 text-pink-600 group-hover:text-pink-700 transition-colors duration-300" />
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-6 mb-8 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-[1.02] group">
+              <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4 flex items-center group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
+                <Users className="w-5 h-5 mr-2 text-pink-600 dark:text-pink-400 group-hover:text-pink-700 transition-colors duration-300" />
                 General Information
               </h2>
 
               {/* Number of Babies */}
               <div className="mb-6 group">
-                <label className="block text-sm font-medium text-gray-700 mb-2 group-hover:text-gray-800 transition-colors duration-300">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 group-hover:text-gray-800 dark:group-hover:text-gray-100 transition-colors duration-300">
                   Number of babies at birth
                 </label>
                 <div className="relative">
                   <select
                     value={noOfBabies}
                     onChange={handleNoOfBabiesChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white appearance-none cursor-pointer hover:border-pink-300 hover:bg-gray-50 transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400 dark:focus:ring-pink-500 bg-white dark:bg-gray-700 appearance-none cursor-pointer hover:border-pink-300 dark:hover:border-pink-500 hover:bg-gray-50 dark:hover:bg-gray-600 transition-all duration-300"
                   >
                     <option value={1}>1 (Single)</option>
                     <option value={2}>2 (Twins)</option>
                     <option value={3}>3 (Triplets)</option>
                   </select>
-                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none group-hover:text-pink-500 transition-colors duration-300" />
+                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500 pointer-events-none group-hover:text-pink-500 dark:group-hover:text-pink-400 transition-colors duration-300" />
                 </div>
               </div>
 
               {/* Delivery Type */}
               <div className="mb-4 group">
-                <label className="block text-sm font-medium text-gray-700 mb-2 group-hover:text-gray-800 transition-colors duration-300">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 group-hover:text-gray-800 dark:group-hover:text-gray-100 transition-colors duration-300">
                   Type of Delivery
                 </label>
                 <div className="relative">
@@ -370,11 +370,11 @@ export default function SignupBabyPage() {
                     onChange={handleDeliveryTypeChange}
                     onBlur={handleDeliveryTypeBlur}
                     required
-                    className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 bg-white appearance-none cursor-pointer hover:bg-gray-50 transition-all duration-300
+                    className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 bg-white dark:bg-gray-700 appearance-none cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600 transition-all duration-300
                       ${
                         deliveryTypeError && deliveryTypeTouched
                           ? "border-red-500 focus:ring-red-400"
-                          : "border-gray-300 focus:ring-pink-400 hover:border-pink-300"
+                          : "border-gray-300 dark:border-gray-600 focus:ring-pink-400 dark:focus:ring-pink-500 hover:border-pink-300 dark:hover:border-pink-500"
                       }
                     `}
                   >
@@ -383,7 +383,7 @@ export default function SignupBabyPage() {
                     <option value="C-Section">C-Section</option>
                     <option value="Assisted">Assisted</option>
                   </select>
-                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none group-hover:text-pink-500 transition-colors duration-300" />
+                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500 pointer-events-none group-hover:text-pink-500 dark:group-hover:text-pink-400 transition-colors duration-300" />
                 </div>
                 {deliveryTypeError && deliveryTypeTouched && (
                   <p className="text-red-500 text-sm mt-2 flex items-center animate-shake">
@@ -399,29 +399,29 @@ export default function SignupBabyPage() {
               {babies.map((baby, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200 hover:from-purple-100 hover:to-pink-100 hover:border-purple-300 transition-all duration-300 hover:scale-[1.02] group"
+                  className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-xl border border-purple-200 dark:border-purple-800/50 hover:from-purple-100 hover:to-pink-100 dark:hover:from-purple-900/30 dark:hover:to-pink-900/30 hover:border-purple-300 dark:hover:border-purple-700/60 transition-all duration-300 hover:scale-[1.02] group"
                 >
-                  <h3 className="font-semibold text-purple-700 mb-4 flex items-center group-hover:text-purple-800 transition-colors duration-300">
-                    <Baby className="w-5 h-5 mr-2 group-hover:text-purple-600 transition-colors duration-300" />
+                  <h3 className="font-semibold text-purple-700 dark:text-purple-300 mb-4 flex items-center group-hover:text-purple-800 dark:group-hover:text-purple-200 transition-colors duration-300">
+                    <Baby className="w-5 h-5 mr-2 text-purple-500 dark:text-purple-400 group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors duration-300" />
                     Baby {index + 1}
                   </h3>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Baby Name */}
                     <div className="md:col-span-2 group">
-                      <label className="block text-sm font-medium text-gray-700 mb-2 group-hover:text-gray-800 transition-colors duration-300">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 group-hover:text-gray-800 dark:group-hover:text-gray-100 transition-colors duration-300">
                         Baby's Name
                       </label>
                       <div
-                        className={`flex items-center border rounded-xl px-3 py-3 bg-white focus-within:ring-2 transition-all duration-300 hover:bg-gray-50 hover:border-purple-300 group
+                        className={`flex items-center border rounded-xl px-3 py-3 bg-white dark:bg-gray-700 focus-within:ring-2 transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-purple-300 dark:hover:border-purple-500 group
                         ${
                           babyErrors[index]?.babyName && babiesTouched[index]
                             ? "border-red-500 focus-within:ring-red-400"
-                            : "border-gray-300 focus-within:ring-purple-400"
+                            : "border-gray-300 dark:border-gray-600 focus-within:ring-purple-400 dark:focus-within:ring-purple-500"
                         }
                       `}
                       >
-                        <Baby className="w-5 h-5 text-gray-400 mr-3 group-hover:text-purple-500 transition-colors duration-300" />
+                        <Baby className="w-5 h-5 text-gray-400 dark:text-gray-500 mr-3 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors duration-300" />
                         <input
                           type="text"
                           placeholder="Enter baby's name"
@@ -431,7 +431,7 @@ export default function SignupBabyPage() {
                           }
                           onBlur={() => handleBabyBlur(index)}
                           required
-                          className="w-full bg-transparent focus:outline-none text-gray-900 placeholder-gray-500 group-hover:placeholder-gray-600 transition-colors duration-300"
+                          className="w-full bg-transparent focus:outline-none text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 group-hover:placeholder-gray-600 dark:group-hover:placeholder-gray-300 transition-colors duration-300"
                         />
                       </div>
                       {babyErrors[index]?.babyName && babiesTouched[index] && (
@@ -444,19 +444,19 @@ export default function SignupBabyPage() {
 
                     {/* Date of Birth */}
                     <div className="group">
-                      <label className="block text-sm font-medium text-gray-700 mb-2 group-hover:text-gray-800 transition-colors duration-300">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 group-hover:text-gray-800 dark:group-hover:text-gray-100 transition-colors duration-300">
                         Date of Birth
                       </label>
                       <div
-                        className={`flex items-center border rounded-xl px-3 py-3 bg-white focus-within:ring-2 transition-all duration-300 hover:bg-gray-50 hover:border-purple-300 group
+                        className={`flex items-center border rounded-xl px-3 py-3 bg-white dark:bg-gray-700 focus-within:ring-2 transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-purple-300 dark:hover:border-purple-500 group
                         ${
                           babyErrors[index]?.dateOfBirth && babiesTouched[index]
                             ? "border-red-500 focus-within:ring-red-400"
-                            : "border-gray-300 focus-within:ring-purple-400"
+                            : "border-gray-300 dark:border-gray-600 focus-within:ring-purple-400 dark:focus-within:ring-purple-500"
                         }
                       `}
                       >
-                        <Calendar className="w-5 h-5 text-gray-400 mr-3 group-hover:text-purple-500 transition-colors duration-300" />
+                        <Calendar className="w-5 h-5 text-gray-400 dark:text-gray-500 mr-3 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors duration-300" />
                         <input
                           type="date"
                           value={baby.dateOfBirth}
@@ -469,7 +469,7 @@ export default function SignupBabyPage() {
                           }
                           onBlur={() => handleBabyBlur(index)}
                           required
-                          className="w-full bg-transparent focus:outline-none text-gray-900"
+                          className="w-full bg-transparent focus:outline-none text-gray-900 dark:text-gray-100 dark:[color-scheme:dark]"
                         />
                       </div>
                       {babyErrors[index]?.dateOfBirth &&
@@ -483,19 +483,19 @@ export default function SignupBabyPage() {
 
                     {/* Time of Birth */}
                     <div className="group">
-                      <label className="block text-sm font-medium text-gray-700 mb-2 group-hover:text-gray-800 transition-colors duration-300">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 group-hover:text-gray-800 dark:group-hover:text-gray-100 transition-colors duration-300">
                         Time of Birth
                       </label>
                       <div
-                        className={`flex items-center border rounded-xl px-3 py-3 bg-white focus-within:ring-2 transition-all duration-300 hover:bg-gray-50 hover:border-purple-300 group
+                        className={`flex items-center border rounded-xl px-3 py-3 bg-white dark:bg-gray-700 focus-within:ring-2 transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-purple-300 dark:hover:border-purple-500 group
                         ${
                           babyErrors[index]?.time && babiesTouched[index]
                             ? "border-red-500 focus-within:ring-red-400"
-                            : "border-gray-300 focus-within:ring-purple-400"
+                            : "border-gray-300 dark:border-gray-600 focus-within:ring-purple-400 dark:focus-within:ring-purple-500"
                         }
                       `}
                       >
-                        <Clock className="w-5 h-5 text-gray-400 mr-3 group-hover:text-purple-500 transition-colors duration-300" />
+                        <Clock className="w-5 h-5 text-gray-400 dark:text-gray-500 mr-3 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors duration-300" />
                         <input
                           type="time"
                           value={baby.time}
@@ -504,7 +504,7 @@ export default function SignupBabyPage() {
                           }
                           onBlur={() => handleBabyBlur(index)}
                           required
-                          className="w-full bg-transparent focus:outline-none text-gray-900"
+                          className="w-full bg-transparent focus:outline-none text-gray-900 dark:text-gray-100 dark:[color-scheme:dark]"
                         />
                       </div>
                       {babyErrors[index]?.time && babiesTouched[index] && (
@@ -517,7 +517,7 @@ export default function SignupBabyPage() {
 
                     {/* Gender */}
                     <div className="group">
-                      <label className="block text-sm font-medium text-gray-700 mb-2 group-hover:text-gray-800 transition-colors duration-300">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 group-hover:text-gray-800 dark:group-hover:text-gray-100 transition-colors duration-300">
                         Gender
                       </label>
                       <div className="relative">
@@ -528,11 +528,11 @@ export default function SignupBabyPage() {
                           }
                           onBlur={() => handleBabyBlur(index)}
                           required
-                          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 bg-white appearance-none cursor-pointer hover:bg-gray-50 transition-all duration-300
+                          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 bg-white dark:bg-gray-700 appearance-none cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600 transition-all duration-300
                             ${
                               babyErrors[index]?.gender && babiesTouched[index]
                                 ? "border-red-500 focus:ring-red-400"
-                                : "border-gray-300 focus:ring-purple-400 hover:border-purple-300"
+                                : "border-gray-300 dark:border-gray-600 focus:ring-purple-400 dark:focus:ring-purple-500 hover:border-purple-300 dark:hover:border-purple-500"
                             }
                           `}
                         >
@@ -541,7 +541,7 @@ export default function SignupBabyPage() {
                           <option value="Girl">Girl</option>
                           <option value="Other">Other</option>
                         </select>
-                        <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none group-hover:text-purple-500 transition-colors duration-300" />
+                        <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500 pointer-events-none group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors duration-300" />
                       </div>
                       {babyErrors[index]?.gender && babiesTouched[index] && (
                         <p className="text-red-500 text-sm mt-2 flex items-center animate-shake">
@@ -553,11 +553,11 @@ export default function SignupBabyPage() {
 
                     {/* Weight */}
                     <div className="group">
-                      <label className="block text-sm font-medium text-gray-700 mb-2 group-hover:text-gray-800 transition-colors duration-300">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 group-hover:text-gray-800 dark:group-hover:text-gray-100 transition-colors duration-300">
                         Weight at Birth (kg)
                       </label>
-                      <div className="flex items-center border border-gray-300 rounded-xl px-3 py-3 bg-white focus-within:ring-2 focus-within:ring-purple-400 transition-all duration-300 hover:bg-gray-50 hover:border-purple-300 group">
-                        <Scale className="w-5 h-5 text-gray-400 mr-3 group-hover:text-purple-500 transition-colors duration-300" />
+                      <div className="flex items-center border border-gray-300 dark:border-gray-600 rounded-xl px-3 py-3 bg-white dark:bg-gray-700 focus-within:ring-2 focus-within:ring-purple-400 dark:focus-within:ring-purple-500 transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-purple-300 dark:hover:border-purple-500 group">
+                        <Scale className="w-5 h-5 text-gray-400 dark:text-gray-500 mr-3 group-hover:text-purple-500 dark:group-hover:text-purple-400 transition-colors duration-300" />
                         <input
                           type="number"
                           value={baby.Weight}
@@ -567,7 +567,7 @@ export default function SignupBabyPage() {
                           placeholder="Optional"
                           min="0"
                           step="0.1"
-                          className="w-full bg-transparent focus:outline-none text-gray-900 placeholder-gray-500 group-hover:placeholder-gray-600 transition-colors duration-300"
+                          className="w-full bg-transparent focus:outline-none text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 group-hover:placeholder-gray-600 dark:group-hover:placeholder-gray-300 transition-colors duration-300"
                         />
                       </div>
                     </div>
@@ -577,8 +577,8 @@ export default function SignupBabyPage() {
             </div>
 
             {/* Privacy Notice */}
-            <div className="mb-6 p-4 bg-blue-50 rounded-xl border border-blue-200 hover:bg-blue-100 hover:border-blue-300 transition-all duration-300 hover:scale-[1.02] group">
-              <p className="text-sm text-blue-800 leading-relaxed group-hover:text-blue-900 transition-colors duration-300">
+            <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-xl border border-blue-200 dark:border-blue-800/50 hover:bg-blue-100 dark:hover:bg-blue-900/40 hover:border-blue-300 dark:hover:border-blue-700/60 transition-all duration-300 hover:scale-[1.02] group">
+              <p className="text-sm text-blue-800 dark:text-blue-300 leading-relaxed group-hover:text-blue-900 dark:group-hover:text-blue-200 transition-colors duration-300">
                 <span className="font-medium">Privacy Notice:</span> At NeoNest,
                 your data privacy is paramount. We are committed to keeping your
                 information confidential and do not share it with third parties.
@@ -592,8 +592,8 @@ export default function SignupBabyPage() {
               className={`w-full py-3 rounded-xl font-semibold shadow-md transition-all duration-300 transform
                 ${
                   isFormValid
-                    ? "bg-gradient-to-r from-purple-400 to-pink-500 hover:from-purple-500 hover:to-pink-600 text-white hover:scale-[1.02] active:scale-[0.98] hover:shadow-lg hover:shadow-purple-200"
-                    : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    ? "bg-gradient-to-r from-purple-400 to-pink-500 hover:from-purple-500 hover:to-pink-600 text-white hover:scale-[1.02] active:scale-[0.98] hover:shadow-lg hover:shadow-purple-200 dark:hover:shadow-purple-800/50"
+                    : "bg-gray-300 text-gray-500 cursor-not-allowed dark:bg-gray-600 dark:text-gray-400"
                 }
               `}
             >
